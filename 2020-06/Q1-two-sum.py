@@ -9,14 +9,28 @@
 # @Software: PyCharm
 
 class Solution:
-    def twosum(self,nums,target):
-        print('the target = {}'.format(target))
-        pass
+    """
+    思路：暴力，O(n^2)的复杂度肯定不是想要的。要向O(n)靠近。
+    第一点：给出数组中的一个值，就能知道它所在的下标，复杂度O(1)，则需要hash，构建字典。key为值，value为下标。
+    第二点：构建字典，需遍历一次。若字典中已经存在target-key的键值，说明找到了。即边构建字典边查找。
+    """
+    def two_sum(self, nums, target):
+        idx_hash = {}
+        for idx, value in enumerate(nums):
+            if idx_hash.keys().__contains__(target - value):
+                return [idx_hash.get(target - value), idx]
+            idx_hash.__setitem__(value, idx)
+        return []
 
 
 if __name__ == '__main__':
     eagle = Solution()
-    eagle.twosum([2, 7, 11, 15],9)
-
-
-
+    # ret = eagle.twoSum([7, 2, 11, 15], 9)
+    # ret = eagle.twoSum([3, 2, 4], 6)
+    # ret = eagle.twoSum([3, 3], 6)
+    # ret = eagle.twoSum([-10, 7, 19, 15], 9)
+    ret = eagle.two_sum([-10, 7, 19, 15], 9)
+    ret = eagle.two_sum([-10, 7, 19, 15], 9)
+    ret = eagle.two_sum([-10, 7, 19, 15], 9)
+    ret = eagle.two_sum([-10, 7, 19, 15], 9)
+    print('ret = {}'.format(ret))
