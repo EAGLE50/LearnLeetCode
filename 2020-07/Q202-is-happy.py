@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # @Time : 2020/7/12 11:40 
 # @Author : bendan50
-# @File : 202-is-happy.py 
+# @File : Q202-is-happy.py
 # @Function： 快乐数
 # 编写一个算法来判断一个数 n 是不是快乐数。
 # 「快乐数」定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，
